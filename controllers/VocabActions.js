@@ -50,7 +50,8 @@ actions.update = async (req,res)=>{
 //show
 actions.show = async(req,res)=>{
     const id = req.params.id
-    const word = await Vocab.findById(id).catch((err)=> res.send(err))
+    await Vocab.findById(id).catch((err)=> res.send(err))
+    const word = req.body
     res.render('show', word)
 }
 

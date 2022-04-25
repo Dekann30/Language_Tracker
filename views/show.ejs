@@ -3,7 +3,14 @@
 <%- include('./partials/head.ejs') %> 
 <body>
     <div class="main">
-        <h2 class="showcase">test</h2>
+        <h2 class="showcase"><%= word.word%></h2>
+        <br class="wordinfo">
+            <%= word.kana %> </br>
+            <%= word.engMeaning %> 
+            (<%= word.partOfSpeech %>) </br>
+            <%= word.exampleSentence %> </br>
+            <%= word.sentenceMeaning %> </br>
+        </div>
     </div>
 </body>
 </html>
