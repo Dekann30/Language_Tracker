@@ -1,7 +1,7 @@
 //////////////////////////
 // Importing Dependencies
 //////////////////////////
-const mongoose = require('./connections')
+const mongoose = require('./connection')
 
 /////////////////////////////////////
 //Schemas and Models
@@ -9,7 +9,7 @@ const mongoose = require('./connections')
 const vocabSchema = new mongoose.Schema({
     word: {type: String, required: true},
     kana: String,
-    engMeaning: {type: String, required: true},
+    engMeaning: {type: Array, required: true},
     partOfSpeech: String,
     exampleSentence: String,
     sentenceMeaning: String
