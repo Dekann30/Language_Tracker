@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs')%>
+<body>
+    <nav>
+        <button class="back" type="button" onclick="location.href='/vocab'">Back</button>
+    </nav>
+    <h1>Add New Word</h1>
+    <div class="main">
+         <form action="/vocab" method="post">
+        <input type="text" name="word" placeholder="Word as it is Commonly Written"/><br/>
+        <input type="text" name="kana" placeholder="Word in Kana"/><br/>
+        <input type="text" name="engMeaning" placeholder="Word in English"/><br/>
+        <input type="text" name="partOfSpeech" placeholder="Part of Speech"/><br/>
+        <input type="text" name="exampleSentence" placeholder="Example Sentence"/><br/>
+        <input type="text" name="sentenceMeaning" placeholder="Example Sentence in English"/><br/>
+        <div class="nav-button">
+            <input type="submit" name="" value="Add Word"/>
+            <button type="button" onclick="location.href='/vocab'">Cancel</button>
+        </div>
+    </div>
+</body>
+</html>
