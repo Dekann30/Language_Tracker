@@ -2,14 +2,27 @@
 <html lang="en">
 <%- include('./partials/head.ejs') %> 
 <body>
-    <h1>I dont even know</h1>
-    <ul>
-        <% for (word of vocab) { %>
-            <li>
-            <%= word.word %> 
-            </li>
-        <% } %>
-    </ul>
+   <div class="main">
+    <div class="conceptlist"> </div>
+    <div class="vocablist">
+        <h2>Vocabulary Learned</h2>
+        <table class="vocab">
+            <tr>
+                <% for (word of vocab){ %>
+                    <tr>
+                        <td>
+                            <form action="/vocab/<%=word._id%>?_method=delete" method="post">
+                                <input type="submit" value="Delete">
+                            </form>
+                        </td>
+                        <td><%=word.updatedAt %></td>
+                        <td> <a href="/vocab/<%=word._id%>"><%= word.word %> </a></td>
+                        <td><%= word.partOfSpeech %> </td>
+                    </tr>
+                <% } %>
+        </table>
+    </div>
+   </div>
 </body>
 </html>
 

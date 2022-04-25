@@ -30,11 +30,15 @@ actions.create = async (req,res)=>{
 }
 
 //delete
+actions.delete = async (req,res)=>{
+    const id = req.params.id
+    await Vocab.findByIdAndDelete(id).catch((err)=> res.send(err))
+}
 
 //update
 actions.update = async (req,res)=>{
     const id = req.params.id
-    const vocab = await Vocab.findById(id)
+    const vocab = await Vocab.findById(id).catch((err)=> res.send(err))
     await vocab.save()
     res.redirect('/vocab')
 }
@@ -44,6 +48,11 @@ actions.update = async (req,res)=>{
 //edit
 
 //show
+actions.show = async(req,res)=>{
+    const id = req.params.id
+    const word = await Vocab.findById(id).catch((err)=> res.send(err))
+    res.render('show', word)
+}
 
 //////////////////////
 //Export actions oject

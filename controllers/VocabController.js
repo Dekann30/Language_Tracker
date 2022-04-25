@@ -10,6 +10,10 @@ const VocabActions = require('./VocabActions.js')
 //////////////////////////
 router.get('/', VocabActions.index)
 router.get('/seed', VocabActions.seed)
+router.delete('/:id', VocabActions.delete)
+
+
+router.get('/:id', VocabActions.show)
 
 ////////////////////////
 //Export the router
