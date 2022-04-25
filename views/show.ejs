@@ -2,10 +2,14 @@
 <html lang="en">
 <%- include('./partials/head.ejs') %> 
 <body>
+    <nav>
+        <button class="back" type="button" onclick="location.href='/vocab'">Back</button>
+        <button class="edit" type="button" onclick="location.href='/vocab/<%=word._id%>/edit'">Edit Word</button>
+    </nav>
     <div class="main">
         <h2 class="showcase"><%= word.word%></h2>
-        <br class="wordinfo">
-            <%= word.kana %> </br>
+        <div class="wordinfo">
+            <%= word.kana %> </div>
             <%= word.engMeaning %> 
             (<%= word.partOfSpeech %>) </br>
             <%= word.exampleSentence %> </br>
