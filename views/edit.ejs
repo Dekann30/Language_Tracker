@@ -5,17 +5,17 @@
     <h1>Edit Word</h1>
     <div class="editboxes">
         <form action="/vocab/<%=edit._id%>?_method=put" method="post">
-      Word:<input type="text" name="word" value='<%= edit.word%>' /><br/>
-      Kana:<input type="text" name="kana" value='<%= edit.kana %>' /><br/>
-      Meaning:<input type="text" name="engMeaning" value='<%= edit.engMeaning %>' /><br/>
-      Part of Speech:<input type="text" name="partOfSpeech" value='<%= edit.partOfSpeech %>' /><br/>
-      Example:<input type="text" name="exampleSentence" value='<%= edit.exampleSentence %>' /><br/>
-      Example in English:<input type="text" name="sentenceMeaning" value='<%= edit.sentenceMeaning %>' /><br/>
-      <div class="subcancel">
+            Word:<input type="text" name="word" value='<%= edit.word%>' /><br/>
+            Kana:<input type="text" name="kana" value='<%= edit.kana %>' /><br/>
+            Meaning:<input type="text" name="engMeaning" value='<%= edit.engMeaning %>' /><br/>
+            Part of Speech:<input type="text" name="partOfSpeech" value='<%= edit.partOfSpeech %>' /><br/>
+            Example:<input type="text" name="exampleSentence" value='<%= edit.exampleSentence %>' /><br/>
+            Example in English:<input type="text" name="sentenceMeaning" value='<%= edit.sentenceMeaning %>' /><br/>
             <input type="submit" name="" value="Submit Changes"/>
-            <button type="button" onclick="location.href='/vocab/<%=edit._id%>'">Cancel</button>
+        </form> 
+        <div class="subcancel">
+            <button><a href="/vocab/<%=edit._id%>">Cancel</a> </button>
         </div>
-   </form> 
     </div>
 </body>
 </html>

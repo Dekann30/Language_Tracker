@@ -62,8 +62,9 @@ actions.show = (req,res)=>{
     Vocab.findById(id, (err, showWord)=>{
         res.render('show', {word: showWord})
     })
-    // const word = req.body
     
+    // const word = req.body
+    //res.render('show', word)
 }
 
 //////////////////////
