@@ -6,6 +6,7 @@ const express = require('express')
 const methodOverride = require('method-override')
 const morgan = require('morgan')
 const VocabRouter = require('./controllers/VocabController')
+const ConceptRouter = require('./controllers/ConceptController')
 
 const app = express()
 app.set('view engine', 'ejs')
@@ -18,6 +19,7 @@ app.use(morgan('tiny'))
 app.use(express.urlencoded({extended: true}))
 app.use(express.static('static'))
 app.use('/japanese', VocabRouter)
+app.use('/japanese', ConceptRouter)
 
 //////////////////
 //Server Listener
