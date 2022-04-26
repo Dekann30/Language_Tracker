@@ -19,7 +19,7 @@ actions.index = async (req,res)=>{
 //seed
 actions.seed = async (req,res)=>{
     await Vocab.deleteMany({}).catch((err)=> res.send(err))
-    const vocab = await Vocab.create(japaneseVocabSeed).catch((err)=> res.send(err))
+    await Vocab.create(japaneseVocabSeed).catch((err)=> res.send(err))
     res.redirect('/vocab')
 }
 
@@ -30,41 +30,32 @@ actions.new = (req,res)=>{
 
 //delete
 actions.delete = async (req,res)=>{
-    const id = req.params.id
-    await Vocab.findByIdAndDelete(id).catch((err)=> res.send(err))
+    await Vocab.findByIdAndDelete(req.params.id).catch((err)=> res.send(err))
+    res.redirect('/vocab')
 }
 
 //update
 actions.update = async (req,res)=>{
-    const id = req.params.id
-    const vocab = await Vocab.findById(id).catch((err)=> res.send(err))
-    await vocab.save()
-    res.redirect('/vocab/:id')
+    await Vocab.findByIdAndUpdate(req.params.id, req.body).catch((err)=> res.send(err))
+    res.redirect(`/vocab/${req.params.id}`)
 }
 
 //create
 actions.create = async (req,res)=>{
-    await Vocab.create(req.body).catch((err)=> res.send(err))
-    res.redirect('/vocab')
+    let newWord = await Vocab.create(req.body).catch((err)=> res.send(err))
+    res.redirect(`/vocab/${newWord._id}`)
 }
 
 //edit
-actions.edit = (req,res)=>{
-    const id = req.params.id
-    Vocab.findById(id, (err, editedWord)=>{
-        res.render('edit', {edit: editedWord})
-    })
+actions.edit = async (req,res)=>{
+    let edit = await Vocab.findById(req.params.id).catch((err)=> res.send(err))
+    res.render('edit', {edit})
 }
 
 //show
-actions.show = (req,res)=>{
-    const id = req.params.id
-    Vocab.findById(id, (err, showWord)=>{
-        res.render('show', {word: showWord})
-    })
-    
-    // const word = req.body
-    //res.render('show', word)
+actions.show = async (req,res)=>{
+    let showWord = await Vocab.findById(req.params.id).catch((err)=> res.send(err))
+    res.render('show', {word: showWord})
 }
 
 //////////////////////
