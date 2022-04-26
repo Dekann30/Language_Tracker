@@ -9,18 +9,17 @@ const japaneseVocabSeed = require('../models/japaneseVocabSeed')
 ////////////////////////////////
 const actions = {}
 
-
-//index
-actions.index = async (req,res)=>{
-    const vocab = await Vocab.find({}).catch((err)=> res.send(err))
-    res.render('index', {vocab})
-}
-
 //seed
 actions.seed = async (req,res)=>{
     await Vocab.deleteMany({}).catch((err)=> res.send(err))
     await Vocab.create(japaneseVocabSeed).catch((err)=> res.send(err))
     res.redirect('/vocab')
+}
+
+//index
+actions.index = async (req,res)=>{
+    const vocab = await Vocab.find({}).catch((err)=> res.send(err))
+    res.render('index', {vocab})
 }
 
 //new
