@@ -6,18 +6,18 @@
     <div class="conceptlist"> </div>
     <div class="vocablist">
         <h2>Vocabulary Learned</h2>
-        <button><a href="/vocab/new">Add New Word</a></button>
+        <button><a href="/japanese/new">Add New Word</a></button>
         <table class="vocab">
             <tr>
                 <% for (word of vocab){ %>
                     <tr>
                         <td>
-                            <form action="/vocab/<%=word._id%>?_method=delete" method="post">
+                            <form action="/japanese/<%=word._id%>?_method=delete" method="post">
                                 <input type="submit" value="Delete">
                             </form>
                         </td>
-                        <td><%=word.updatedAt %></td>
-                        <td> <a href="/vocab/<%=word._id%>"><%= word.word %> </a></td>
+                        <td><%=word.updatedAt.toDateString().split(' ').slice(1).join(' ') %></td>
+                        <td> <a href="/japanese/<%=word._id%>"><%= word.word %> </a></td>
                         <td><%= word.partOfSpeech %> </td>
                     </tr>
                 <% } %>
