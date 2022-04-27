@@ -26,4 +26,4 @@ app.use('/vocab', VocabRouter)
 //Server Listener
 /////////////////
 const PORT = process.env.PORT
-app.listen(PORT, ()=>console.log(`Listening on port ${PORT}`))
+app.listen(PORT, ()=>console.log(`Hello~ listening on port ${PORT}`))
