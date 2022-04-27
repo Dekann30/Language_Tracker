@@ -8,7 +8,12 @@ const mongoose = require('mongoose')
 // Setup Database Connection
 //////////////////////////////
 const DATABASE_URL = process.env.DATABASE_URL
-mongoose.connect(DATABASE_URL)
+mongoose.connect(DATABASE_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
+})
 const cxn = mongoose.connection
 
 cxn
