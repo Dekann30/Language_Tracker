@@ -18,8 +18,9 @@ app.use(methodOverride('_method'))
 app.use(morgan('tiny'))
 app.use(express.urlencoded({extended: true}))
 app.use(express.static('static'))
-app.use('/japanese', VocabRouter)
-app.use('/japanese', ConceptRouter)
+app.use('/concepts', ConceptRouter)
+// app.use('/vocab', VocabRouter) uncomment and fix
+
 
 //////////////////
 //Server Listener

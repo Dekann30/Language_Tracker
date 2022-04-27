@@ -3,24 +3,40 @@
 <%- include('./partials/head.ejs') %> 
 <body>
    <div class="main">
-    <div class="conceptlist"> </div>
+    <div class="conceptlist">
+        <h2>Concept Learned</h2>
+        <button><a href="/japanese/newconcept">Add New Concept</a> </button>
+        <table class="concept">
+            <% for (concept of concepts){ %>
+                <tr>
+                    <td>
+                        <form action="/japanese/<%=concept._id%>?_method=delete" method="post">
+                            <input type="submit" value="Delete">
+                        </form>
+                    </td>
+                    <td><%=concept.updatedAt.toDateString().split(' ').slice(1).join(' ') %></td>
+                    <td> <a href="/japanese/<%=concept._id%>"><%= concept.word %> </a></td>
+                    <td><%= concept.partOfSpeech %> </td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
     <div class="vocablist">
         <h2>Vocabulary Learned</h2>
         <button><a href="/japanese/new">Add New Word</a></button>
         <table class="vocab">
-            <tr>
-                <% for (word of vocab){ %>
-                    <tr>
-                        <td>
-                            <form action="/japanese/<%=word._id%>?_method=delete" method="post">
-                                <input type="submit" value="Delete">
-                            </form>
-                        </td>
-                        <td><%=word.updatedAt.toDateString().split(' ').slice(1).join(' ') %></td>
-                        <td> <a href="/japanese/<%=word._id%>"><%= word.word %> </a></td>
-                        <td><%= word.partOfSpeech %> </td>
-                    </tr>
-                <% } %>
+            <% for (word of vocab){ %>
+                <tr>
+                    <td>
+                        <form action="/japanese/<%=word._id%>?_method=delete" method="post">
+                            <input type="submit" value="Delete">
+                        </form>
+                    </td>
+                    <td><%=word.updatedAt.toDateString().split(' ').slice(1).join(' ') %></td>
+                    <td> <a href="/japanese/<%=word._id%>"><%= word.word %> </a></td>
+                    <td><%= word.partOfSpeech %> </td>
+                </tr>
+            <% } %>
         </table>
     </div>
    </div>
