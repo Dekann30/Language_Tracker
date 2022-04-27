@@ -1,0 +1,29 @@
+.main{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.conceptlist{
+    width:400px;
+    height: 500px;
+    padding-right: 30px;
+}
+
+.vocablist{
+    width: 400px;
+    height:500px;
+    padding-left: 30px;
+}
+
+td{
+   border: 1px solid white;
+   background-color: lightcoral;
+   height: 40px;
+   width:80px;
+   text-align: center;
+}
+
+
