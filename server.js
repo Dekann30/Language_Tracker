@@ -21,7 +21,9 @@ app.use(express.static('static'))
 app.use('/concepts', ConceptRouter)
 app.use('/vocab', VocabRouter)
 
-
+app.get('/', (req,res)=>{
+    res.redirect('/concepts')
+})
 //////////////////
 //Server Listener
 /////////////////
