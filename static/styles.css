@@ -1,9 +1,22 @@
+.indexbody{
+    background-image: url(./images/esl-japan-language-stay-hero.jpg);
+}
+
+.vocabbody{
+    background-image: url(./images/planning-a-trip-to-japan.jpg);
+}
+
+.conceptbody{
+    background-image: url(./images/volcanic-cone-Japan-Mount-Fuji.webp);
+}
+
 .main{
     height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-top: 0;
 }
 
 .conceptlist{
@@ -26,4 +39,18 @@ td{
    text-align: center;
 }
 
+.conceptinfo,
+.wordinfo,
+.vocabmain,
+.conceptmain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: azure;
+    font-size: 70px;
+}
 
+h2{
+    margin:40px;
+}

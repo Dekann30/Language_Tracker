@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('./partials/head.ejs')%>
-<body>
-    <h1>Add New Word</h1>
-    <div class="main">
+<body class="vocabbody">
+    <div class="main vocabmain">
+        <h1>Add New Word</h1>
         <form action="/vocab" method="post">
             <input type="text" name="word" placeholder="Word as it is Commonly Written"/><br/>
             <input type="text" name="kana" placeholder="Word in Kana"/><br/>

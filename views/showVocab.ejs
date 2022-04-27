@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('./partials/head.ejs') %> 
-<body>
+<body class="vocabbody">
     <nav>
         <button class="back"> <a href="/concepts">Back</a></button>
         <button class="edit"> <a href="/vocab/<%=word._id%>/edit"> Edit Word</a></button>
     </nav>
-    <div class="main">
+    <div class="main vocabmain">
         <h2 class="showcase"><%= word.word%></h2>
         <div class="wordinfo">
-            <%= word.kana %> </div>
+            <%= word.kana %> </br>
             <%= word.engMeaning %> 
             (<%= word.partOfSpeech %>) </br>
             <%= word.exampleSentence %> </br>
