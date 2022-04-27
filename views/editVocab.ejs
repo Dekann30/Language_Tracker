@@ -4,7 +4,7 @@
 <body>
     <h1>Edit Word</h1>
     <div class="editboxes">
-        <form action="/japanese/<%=edit._id%>?_method=put" method="post">
+        <form action="/vocab/<%=edit._id%>?_method=put" method="post">
             Word:<input type="text" name="word" value='<%= edit.word%>' /><br/>
             Kana:<input type="text" name="kana" value='<%= edit.kana %>' /><br/>
             Meaning:<input type="text" name="engMeaning" value='<%= edit.engMeaning %>' /><br/>
@@ -14,7 +14,7 @@
             <input type="submit" name="" value="Submit Changes"/>
         </form> 
         <div class="subcancel">
-            <button><a href="/japanese/<%=edit._id%>">Cancel</a> </button>
+            <button><a href="/vocab/<%=edit._id%>">Cancel</a> </button>
         </div>
     </div>
 </body>

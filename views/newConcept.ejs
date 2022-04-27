@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs')%>
+<body>
+    <h1>Add New Concept</h1>
+    <div class="main">
+        <form action="/concepts" method="post">
+            <input type="text" name="conceptName" placeholder="Name of Concept"/><br/>
+            <input type="text" name="grammar" placeholder="Grammar Forms Used"/><br/>
+            <input type="text" name="conceptExplained" placeholder="Concept Explaination"/><br/>
+            <input type="text" name="exampleSentence" placeholder="Example Sentence"/><br/>
+            <input type="text" name="sentenceMeaning" placeholder="Example Sentence in English"/><br/>
+             <input type="submit" name="" value="Add Concept"/>
+        </form>
+        <div class="nav-button">
+            <button> <a href="/concepts">Cancel</a> </button>
+        </div>
+    </div>
+</body>
+</html>

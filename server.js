@@ -19,7 +19,7 @@ app.use(morgan('tiny'))
 app.use(express.urlencoded({extended: true}))
 app.use(express.static('static'))
 app.use('/concepts', ConceptRouter)
-// app.use('/vocab', VocabRouter) uncomment and fix
+app.use('/vocab', VocabRouter)
 
 
 //////////////////

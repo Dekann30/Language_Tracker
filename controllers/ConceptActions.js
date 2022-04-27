@@ -12,9 +12,13 @@ const actions = {}
 
 //seed
 actions.seed = async (req,res)=>{
-    await Concept.deleteMany({}).catch((err)=> res.send(err))
-    await Concept.create(conceptSeed).catch((err)=> res.send(err))
-    res.redirect('/japanese')
+    try{
+        await Concept.deleteMany({})
+        await Concept.create(conceptSeed)
+        res.redirect('/concepts')
+    } catch(err) {
+        res.send(err)
+    }
 }
 
 //index
@@ -26,12 +30,62 @@ actions.index = async (req,res)=>{
     } catch(err) { 
         res.send(err)
     }
-//     const concept = await Concept.find({})
-//     .catch((err)=> res.send(err))
-//     res.render('index', {concept})
 }
 
+//new
+actions.new = (req,res)=>{
+    res.render('newConcept')
+}
 
+//delete
+actions.delete = async (req,res)=>{
+    try{
+        await Concept.findByIdAndDelete(req.params.id)
+        res.redirect('/concepts')
+    } catch(err) {
+        res.send(err)
+    }
+}
+
+//update
+actions.update = async (req,res)=>{
+    try{
+        await Concept.findByIdAndUpdate(req.params.id, req.body)
+        res.redirect(`/concepts/${req.params.id}`)
+    } catch(err) {
+        res.send(err)
+    }
+}
+
+//create
+actions.create = async (req,res)=>{
+    try{
+        let newConcept = await Concept.create(req.body)
+        res.redirect(`/concepts/${newConcept._id}`)
+    } catch(err) {
+        res.send(err)
+    }
+}
+
+//edit
+actions.edit = async (req,res)=>{
+    try{
+        let edit = await Concept.findById(req.params.id)
+        res.render('editConcept', {edit})
+    } catch(err) {
+        res.send(err)
+    }
+}
+
+//show
+actions.show = async (req,res)=>{
+    try{
+        let showConcept = await Concept.findById(req.params.id)
+        res.render('showConcept', {concept: showConcept})
+    } catch(err) {
+        res.send(err)
+    }
+}
 
 //////////////////////
 //Export actions oject

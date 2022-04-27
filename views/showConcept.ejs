@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %> 
+<body>
+    <nav>
+        <button class="back"> <a href="/concepts">Back</a></button>
+        <button class="edit"> <a href="/concepts/<%=concept._id%>/edit">Edit Concept</a></button>
+    </nav>
+    <br class="main">
+        <h2 class="showcase"><%= concept.conceptName%></h2>
+        <div class="conceptinfo">
+            <%= concept.grammar %> </div>
+            <%= concept.conceptExplained %> </br>
+            <%= concept.exampleSentence %> </br>
+            <%= concept.sentenceMeaning %> </br>
+        </div>
+    </div>
+</body>
+</html>

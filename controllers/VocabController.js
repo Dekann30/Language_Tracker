@@ -9,7 +9,6 @@ const VocabActions = require('./VocabActions.js')
 // Routes
 //////////////////////////
 router.get('/seed', VocabActions.seed)
-router.get('/', VocabActions.index)
 router.get('/new', VocabActions.new)
 router.delete('/:id', VocabActions.delete)
 router.put('/:id', VocabActions.update)

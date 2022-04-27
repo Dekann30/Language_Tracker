@@ -11,50 +11,68 @@ const actions = {}
 
 //seed
 actions.seed = async (req,res)=>{
-    await Vocab.deleteMany({}).catch((err)=> res.send(err))
-    await Vocab.create(vocabSeed).catch((err)=> res.send(err))
-    res.redirect('/japanese')
-}
-
-//index
-actions.index = async (req,res)=>{
-    const vocab = await Vocab.find({}).catch((err)=> res.send(err))
-    res.render('index', {vocab})
+    try{
+        await Vocab.deleteMany({})
+        await Vocab.create(vocabSeed)
+        res.redirect('/concepts')
+    } catch(err) {
+        res.send(err)
+    }
 }
 
 //new
 actions.new = (req,res)=>{
-    res.render('new')
+    res.render('newVocab')
 }
 
 //delete
 actions.delete = async (req,res)=>{
-    await Vocab.findByIdAndDelete(req.params.id).catch((err)=> res.send(err))
-    res.redirect('/japanese')
+    try{
+        await Vocab.findByIdAndDelete(req.params.id)
+        res.redirect('/concepts')
+    } catch(err) {
+        res.send(err)
+    }
 }
 
 //update
 actions.update = async (req,res)=>{
-    await Vocab.findByIdAndUpdate(req.params.id, req.body).catch((err)=> res.send(err))
-    res.redirect(`/japanese/${req.params.id}`)
+    try{
+        await Vocab.findByIdAndUpdate(req.params.id, req.body)
+        res.redirect(`/vocab/${req.params.id}`)
+    } catch(err) {
+        res.send(err)
+    }
 }
 
 //create
 actions.create = async (req,res)=>{
-    let newWord = await Vocab.create(req.body).catch((err)=> res.send(err))
-    res.redirect(`/japanese/${newWord._id}`)
+    try{
+        let newWord = await Vocab.create(req.body)
+        res.redirect(`/vocab/${newWord._id}`)
+    } catch(err) {
+        res.send(err)
+    }
 }
 
 //edit
 actions.edit = async (req,res)=>{
-    let edit = await Vocab.findById(req.params.id).catch((err)=> res.send(err))
-    res.render('edit', {edit})
+    try{
+        let edit = await Vocab.findById(req.params.id)
+        res.render('editVocab', {edit})
+    } catch(err) {
+        res.send(err)
+    }
 }
 
 //show
 actions.show = async (req,res)=>{
-    let showWord = await Vocab.findById(req.params.id).catch((err)=> res.send(err))
-    res.render('show', {word: showWord})
+    try{
+        let showWord = await Vocab.findById(req.params.id)
+        res.render('showVocab', {word: showWord})
+    } catch(err) {
+        res.send(err)
+    }
 }
 
 //////////////////////
