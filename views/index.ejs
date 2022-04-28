@@ -2,16 +2,19 @@
 <html lang="en">
 <%- include('./partials/head.ejs') %> 
 <body class="indexbody">
+    <h1>Language Log</h1>
    <div class="main">
     <div class="conceptlist">
         <h2>Concept Learned</h2>
-        <button><a href="/concepts/new">Add New Concept</a> </button>
+        <div class="indexbutton">
+            <button class="indexbutton" ><a href="/concepts/new">Add New Concept</a> </button>
+        </div>
         <table class="concept">
             <% for (concept of concepts){ %>
                 <tr>
                     <td>
                         <form action="/concepts/<%=concept._id%>?_method=delete" method="post">
-                            <input type="submit" value="Delete">
+                            <input type="submit" value="Delete" class="deletebutton" >
                         </form>
                     </td>
                     <td><%=concept.updatedAt.toDateString().split(' ').slice(1).join(' ') %></td>
@@ -23,13 +26,15 @@
     </div>
     <div class="vocablist">
         <h2>Vocabulary Learned</h2>
-        <button><a href="/vocab/new">Add New Word</a></button>
+        <div class="indexbutton">
+            <button class="indexbutton"><a href="/vocab/new">Add New Word</a></button>
+        </div>
         <table class="vocab">
             <% for (word of vocab){ %>
                 <tr>
                     <td>
                         <form action="/vocab/<%=word._id%>?_method=delete" method="post">
-                            <input type="submit" value="Delete">
+                            <input type="submit" value="Delete" class="deletebutton">
                         </form>
                     </td>
                     <td><%=word.updatedAt.toDateString().split(' ').slice(1).join(' ') %></td>

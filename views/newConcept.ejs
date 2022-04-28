@@ -2,19 +2,19 @@
 <html lang="en">
 <%- include('./partials/head.ejs')%>
 <body class="conceptbody">
+    <nav>
+        <button class="conceptbutton" > <a href="/concepts">Cancel</a> </button>
+    </nav>
     <div class="main conceptmain">
-        <h1>Add New Concept</h1>
+        <h2>Add New Concept</h2>
         <form action="/concepts" method="post">
-            <input type="text" name="conceptName" placeholder="Name of Concept"/><br/>
-            <input type="text" name="grammar" placeholder="Grammar Forms Used"/><br/>
-                <input type="text" name="conceptExplained" placeholder="Concept Explaination"/><br/>
-            <input type="text" name="exampleSentence" placeholder="Example Sentence"/><br/>
-            <input type="text" name="sentenceMeaning" placeholder="Example Sentence in English"/><br/>
-            <input type="submit" name="" value="Add Concept"/>
+            <input type="text" name="conceptName" placeholder="Name of Concept" class="cpal" /><br/>
+            <input type="text" name="grammar" placeholder="Grammar Forms Used" class="cpal" /><br/>
+            <input type="text" name="conceptExplained" placeholder="Concept Explaination" class="cpal" /><br/>
+            <input type="text" name="exampleSentence" placeholder="Example Sentence" class="cpal" /><br/>
+            <input type="text" name="sentenceMeaning" placeholder="Example Sentence in English" class="cpal" /><br/>
+            <input type="submit" name="" value="Add Concept" class="conceptbutton" />
         </form>
-        <div class="nav-button">
-            <button> <a href="/concepts">Cancel</a> </button>
-        </div>
     </div>
 </body>
 </html>

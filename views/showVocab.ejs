@@ -3,17 +3,17 @@
 <%- include('./partials/head.ejs') %> 
 <body class="vocabbody">
     <nav>
-        <button class="back"> <a href="/concepts">Back</a></button>
-        <button class="edit"> <a href="/vocab/<%=word._id%>/edit"> Edit Word</a></button>
+        <button class="back vocabbutton"> <a href="/concepts">Back</a></button>
+        <button class="edit vocabbutton"> <a href="/vocab/<%=word._id%>/edit"> Edit Word</a></button>
     </nav>
     <div class="main vocabmain">
-        <h2 class="showcase"><%= word.word%></h2>
+        <h3 class="showcase"><%= word.word%></h3>
         <div class="wordinfo">
-            <%= word.kana %> </br>
-            <%= word.engMeaning %> 
+            Kana: <%= word.kana %> </br>
+            Meaning: <%= word.engMeaning %> 
             (<%= word.partOfSpeech %>) </br>
-            <%= word.exampleSentence %> </br>
-            <%= word.sentenceMeaning %> </br>
+            Example Sentence: <%= word.exampleSentence %> </br>
+            (<%= word.sentenceMeaning %>) </br>
         </div>
     </div>
 </body>

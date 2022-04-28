@@ -3,16 +3,16 @@
 <%- include('./partials/head.ejs') %> 
 <body class="conceptbody">
     <nav>
-        <button class="back"> <a href="/concepts">Back</a></button>
-        <button class="edit"> <a href="/concepts/<%=concept._id%>/edit">Edit Concept</a></button>
+        <button class="back conceptbutton"> <a href="/concepts">Back</a></button>
+        <button class="edit conceptbutton"> <a href="/concepts/<%=concept._id%>/edit">Edit Concept</a></button>
     </nav>
     <div class="main conceptmain">
-        <h2 class="showcase"><%= concept.conceptName%></h2>
+        <h3 class="showcase"><%= concept.conceptName%></h3>
         <div class="conceptinfo">
-            <%= concept.grammar %> </br>
-            <%= concept.conceptExplaination%> </br>
-            <%= concept.exampleSentence %> </br>
-            <%= concept.sentenceMeaning %> </br>
+            Grammar: <%= concept.grammar %> </br>
+            Explaination: <%= concept.conceptExplaination%> </br>
+            Example Sentence: <%= concept.exampleSentence %> </br>
+            (<%= concept.sentenceMeaning %>) </br>
         </div>
     </div>
 </body>
