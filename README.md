@@ -4,10 +4,6 @@
 
 <p>This project was very difficult to start concept wise. I thought I knew what I wanted to do but as I was building it I became less sure.I'm not entirely happy with it but it works~</p>
 
-<p>How it works in that you input new words and concepts and they are populated for you to see and keep track of.</p>
-
-<p>This is a bad markdown</p>
-
 ---
 
 ## User Stories
