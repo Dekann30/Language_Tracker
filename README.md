@@ -22,12 +22,14 @@
 
 ---
 
--HTML
--Javascript
--Node
--MongoDB
--Mongoose
--Express
+- HTML/CSS/JS
+- Javascript
+- Node
+- MongoDB
+- Mongoose
+- Express
+- Ejs
+- Method-Override
 
 ---
 
