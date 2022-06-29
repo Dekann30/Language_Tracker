@@ -2,7 +2,7 @@
 
 ---
 
-<p>This project was very difficult to start concept wise. I thought I knew what I wanted to do but as I was building it I became less sure.I'm not entirely happy with it but it works~</p>
+<p>A place to track self-studied language learning in terms of concepts/grammar and vocabulary.</p>
 
 ---
 
@@ -30,10 +30,6 @@
 - Express
 - Ejs
 - Method-Override
-
----
-
-## Schemas
 
 ---
 
