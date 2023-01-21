@@ -1,11 +1,5 @@
 # Language Tracker
 
----
-
-<p>This project was very difficult to start concept wise. I thought I knew what I wanted to do but as I was building it I became less sure.I'm not entirely happy with it but it works~</p>
-
----
-
 ## User Stories
 
 ---
